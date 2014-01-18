@@ -201,7 +201,7 @@ module.exports = function setup(fsOptions) {
                         return callback(entry);
                     }
                     entry.link = link;
-                    resolvePath(pathResolve(dirname(fullpath), link), {alreadyRooted: true}, function (err, newpath) {
+                    resolvePath(pathResolve(dirname(fullpath), link), {alreadyRooted: true, nocheck: 1}, function (err, newpath) {
                       if (err) {
                           entry.linkStatErr = err;
                           return callback(entry);
